@@ -1,0 +1,3 @@
+[submodule "nn4nlp2018cmu/nn4nlp-code"]
+	path = nn4nlp2018cmu/nn4nlp-code
+	url = https://github.com/neubig/nn4nlp-code
