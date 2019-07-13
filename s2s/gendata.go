@@ -10,7 +10,7 @@ import (
 
 func main() {
 	language := ntw.Languages.Lookup("en")
-	for i := 0; i < 1000000; i++ {
+	for i := 0; i < 1000001; i++ {
 		w := strings.Replace(language.IntegerToWords(i), "-", " ", -1)
 		fmt.Printf("%s\t%s\n", w, strings.Join(strings.Split(strconv.Itoa(i), ""), " "))
 	}
