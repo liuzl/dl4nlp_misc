@@ -23,7 +23,7 @@ function Parse(text) {
     $('#editor_holder').html("<h4>loading...</h4>");
     $("#visual").html("<h4>loading...</h4>");
     $.ajax({
-        url: "/api?text="+encodeURIComponent(text), cache: false,
+        url: "./api?text="+encodeURIComponent(text), cache: false,
         success: function(result) {
             $('#editor_holder').jsonview(result);
             visual(result);
