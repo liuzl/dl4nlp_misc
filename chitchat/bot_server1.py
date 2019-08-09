@@ -7,7 +7,7 @@ app = Flask(__name__, static_url_path='')
 from seq2seq.evaluator import Predictor
 from seq2seq.util.checkpoint import Checkpoint
 
-cp = Checkpoint.load("./experiment/checkpoints/2019_08_05_13_52_24/")
+cp = Checkpoint.load("./experiment/checkpoints/2019_08_08_23_36_10/")
 predictor = Predictor(cp.model, cp.input_vocab, cp.output_vocab)
 
 def q(s):
@@ -19,7 +19,7 @@ def get():
     r = request.args.get('text', '')
     if r == "":
         return Response(json.dumps({'status':"error", 'message':"empty input"}))
-    return Response(json.dumps({'status':"ok", 'message':q(r)}),
+    return Response(json.dumps({'status':"ok", 'message':q(r)}, ensure_ascii=False),
             mimetype="application/json")
 
 
