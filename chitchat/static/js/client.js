@@ -46,7 +46,7 @@ function appendLog(item) {
 
 function Join() {
     var item = document.createElement("div");
-    item.innerHTML = "小玲：<b>你好，主人！</b>";
+    item.innerHTML = "小灵：<b>你好，主人！</b>";
     appendLog(item);
 }
 
