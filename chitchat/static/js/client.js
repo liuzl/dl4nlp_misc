@@ -26,7 +26,7 @@ function Parse(text) {
         url: "./api?text="+encodeURIComponent(text), cache: false,
         success: function(result) {
             var item = document.createElement("div");
-            item.innerHTML = "小玲：<b>" + result["message"] + "</b>";
+            item.innerHTML = "小灵：<b>" + result["message"] + "</b>";
             appendLog(item);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
