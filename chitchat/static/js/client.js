@@ -2,6 +2,7 @@ $(document).ready(function() {
     Join();
     $('#submit').click(function() {
         var text = $('#text').val().trim();
+        $("#text").val("");
         if (text != "") {
             Parse(text);
         }
@@ -9,6 +10,7 @@ $(document).ready(function() {
     $("#text").on('keypress', function(e) {
         if (e.keyCode != 13) return;
         var text = $('#text').val().trim();
+        $("#text").val("");
         if (text != "") {
             Parse(text);
         }
@@ -16,11 +18,15 @@ $(document).ready(function() {
 });
 
 function Parse(text) {
+    var item = document.createElement("div");
+    item.innerHTML = "主人：<font color='yellow'><b>" + text + "</b></font>";
+    appendLog(item);
+
     $.ajax({
         url: "./api?text="+encodeURIComponent(text), cache: false,
         success: function(result) {
             var item = document.createElement("div");
-            item.innerHTML = "机器人：<b>" + result["message"] + "</b>";
+            item.innerHTML = "小玲：<b>" + result["message"] + "</b>";
             appendLog(item);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -40,7 +46,7 @@ function appendLog(item) {
 
 function Join() {
     var item = document.createElement("div");
-    item.innerHTML = "<b>你好，主人！</b>";
+    item.innerHTML = "小玲：<b>你好，主人！</b>";
     appendLog(item);
 }
 
