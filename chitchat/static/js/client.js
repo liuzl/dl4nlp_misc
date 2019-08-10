@@ -20,7 +20,7 @@ function Parse(text) {
         url: "./api?text="+encodeURIComponent(text), cache: false,
         success: function(result) {
             var item = document.createElement("div");
-            item.innerHTML = result["message"];
+            item.innerHTML = "机器人：<b>" + result["message"] + "</b>";
             appendLog(item);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
