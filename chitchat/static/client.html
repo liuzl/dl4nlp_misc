@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-    <title>Live QA</title>
+    <title>闲聊</title>
     <link rel='stylesheet' href='./bootstrap3.3.7/css/bootstrap.min.css'>
     <link rel="stylesheet" href="./css/AdminLTE.min.css">
     <link rel="stylesheet" href="./css/client.css">
@@ -12,7 +12,7 @@
   </head>
   <body>
     <section class="content-header">
-      <h1>LiveQA<small>client</small></h1>
+      <h1>闲聊<small>client</small></h1>
       <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i>Home</a></li>
         <li class="active">client</li>
@@ -20,25 +20,15 @@
     </section>
 
     <section class="content" style="margin-top:2px;margin-left:10px;margin-right:10px;">
-        <div class='row'>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon">Your uid</div>
-                    <input class="form-control" type="text" value="" id="uid">
-                    <span class="input-group-btn"><button id="submit" class="btn btn-default">Join</button></span>
-                </div>
-            </div>
-        </div>
-
         <div class="row">
             <div id="log"></div>
-            <form id="form">
+            <div id="form">
                 <div class="input-group">
-                <div class="input-group-addon">Answer</div>
-                <input class="form-control" type="text" value="" id="msg">
-                <span class="input-group-btn"><button type="submit" class="btn btn-default">Submit</button></span>
+                <div class="input-group-addon">input</div>
+                <input class="form-control" type="text" value="" id="text">
+                <span class="input-group-btn"><button id="submit" class="btn btn-default">Send</button></span>
                 </div>
-            </form>
+            </div>
         </div>
     </section>
     <script src="./js/client.js"></script>
