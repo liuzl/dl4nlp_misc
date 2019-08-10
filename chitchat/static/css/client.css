@@ -1,0 +1,23 @@
+#log {
+    background: gray;
+    margin: 0.5em;
+    background: gray;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    position: absolute;
+    top: 9em;
+    left: 0.5em;
+    right: 0.5em;
+    bottom: 3em;
+    overflow: auto;
+}
+
+#form {
+    padding: 0 0.5em 0 0.5em;
+    margin: 0;
+    position: absolute;
+    bottom: 1em;
+    left: 0px;
+    width: 100%;
+    overflow: hidden;
+}
+
