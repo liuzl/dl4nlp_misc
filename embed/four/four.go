@@ -59,7 +59,8 @@ func CodeHandler(w http.ResponseWriter, r *http.Request) {
 	var ret []map[string]string
 	GetLevelStore().ForEach(dbutil.BytesPrefix([]byte(code)),
 		func(k, v []byte) (bool, error) {
-			ret = append(ret, map[string]string{string(k): string(v)})
+			kv := strings.Split(string(k), ":")
+			ret = append(ret, map[string]string{kv[0]: kv[1]})
 			return true, nil
 		})
 	rest.MustEncode(w, &rest.RestMessage{"OK", ret})

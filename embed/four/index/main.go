@@ -63,7 +63,7 @@ func main() {
 		} else if err != nil {
 			log.Fatal(err)
 		}
-		if err = db.Put(item.Code, []byte(item.Text)); err != nil {
+		if err = db.Put(item.Code+":"+item.Text, nil); err != nil {
 			log.Fatal(err)
 		}
 		if err = db.Put(item.Text, []byte(item.Code)); err != nil {
