@@ -20,8 +20,8 @@ var (
 )
 
 type Item struct {
-	Code string `json:"id" csv:"code"`
-	Text string `json:"name" csv:"text"`
+	Code string `json:"code" csv:"code"`
+	Text string `json:"text" csv:"text"`
 }
 
 func main() {

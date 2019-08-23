@@ -51,7 +51,7 @@ func CodeHandler(w http.ResponseWriter, r *http.Request) {
 	glog.Infof("addr=%s  method=%s host=%s uri=%s",
 		r.RemoteAddr, r.Method, r.Host, r.RequestURI)
 	r.ParseForm()
-	code := strings.TrimSpace(r.FormValue("text"))
+	code := strings.TrimSpace(r.FormValue("code"))
 	if len(code) <= 0 || len(code) > 5 || !goutil.StringIs(code, unicode.IsDigit) {
 		rest.MustEncode(w, &rest.RestMessage{"FAIL", "code format error"})
 		return
