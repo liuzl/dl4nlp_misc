@@ -19,7 +19,7 @@ def get():
     r = request.args.get('text', '')
     if r == "":
         return Response(json.dumps({'status':"error", 'message':"empty input"}))
-    return Response(json.dumps({'status':"ok", 'message':q(r)}, ensure_ascii=False),
+    return Response(json.dumps({'status':"ok", 'message':q(r), 'request':r}, ensure_ascii=False),
             mimetype="application/json")
 
 
