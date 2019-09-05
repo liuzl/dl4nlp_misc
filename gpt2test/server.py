@@ -32,7 +32,7 @@ model.eval()
 def get():
     prefix = request.args.get('text', '')
     
-    length = 100
+    length = 300
     temperature = 1
     topk = 8
     topp = 0
@@ -53,7 +53,7 @@ def get():
         if item == '[MASK]':
             text[i] = ''
         if item == '[CLS]' or item == '[SEP]':
-            text[i] = ''
+            text[i] = '\n'
     text = ''.join(text).replace('##', '').strip()
     
     return Response(json.dumps({'status':"ok", 'message':text, 'request':prefix},
@@ -62,7 +62,7 @@ def get():
 
 @app.route('/')
 def index():
-    return app.send_static_file('index.html')#
+    return app.send_static_file('index.html')
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=args.port, debug=True)
+    app.run(host='0.0.0.0', port=args.port, debug=True)
