@@ -43,6 +43,9 @@ function visual(doc) {
     var html = "";
     for (var k in doc) {
         var v = doc[k];
+	if (k == "message") {
+	    v = "<pre>" + v + "</pre>";
+	}
         html += one(k, v);
     }
     $("#visual").html(html);
