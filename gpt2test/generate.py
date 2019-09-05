@@ -42,6 +42,7 @@ def main():
     topk = args.topk
     topp = args.topp
 
+    unk_idx = open(args.tokenizer_path).read().split('\n').index('[UNK]')
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     tokenizer = tokenization_bert.BertTokenizer(vocab_file=args.tokenizer_path)
@@ -62,7 +63,8 @@ def main():
             out = common.sample_sequence(
                 model=model, length=length,
                 context=context_tokens,
-                temperature=temperature, top_k=topk, top_p=topp, device=device
+                temperature=temperature, top_k=topk, top_p=topp, device=device,
+                unk_idx=unk_idx
             )
             out = out.tolist()
 
