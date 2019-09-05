@@ -17,6 +17,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--model_path',type=str, default="models/bud", required=False)
 parser.add_argument('--vocab_path',type=str, default="cache/bud_vocab.txt", required=False)
 parser.add_argument('--port',type=int,default=4500,required=False)
+parser.add_argument('--index',type=str,default="index.html",required=False)
 
 args=parser.parse_args()
 
@@ -62,7 +63,8 @@ def get():
 
 @app.route('/')
 def index():
-    return app.send_static_file('index.html')
+    #return app.send_static_file('index.html')
+    return app.send_static_file(args.index)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=args.port, debug=True)
