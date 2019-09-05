@@ -33,7 +33,9 @@ def _is_chinese_char(char):
     return False
 
 
-def top_k_top_p_filtering(logits, top_k=0, top_p=0.0, filter_value=-float('Inf'), unk_idx = 5):
+def top_k_top_p_filtering(logits, top_k=0, top_p=0.0, filter_value=-float('Inf'),
+        unk_idx=4):
+    #print(unk_idx)
     """ Filter a distribution of logits using top-k and/or nucleus (top-p) filtering
         Args:
             logits: logits distribution shape (vocabulary size)
@@ -65,8 +67,8 @@ def top_k_top_p_filtering(logits, top_k=0, top_p=0.0, filter_value=-float('Inf')
     return logits
 
 
-def sample_sequence(model, length, context, num_samples=1, temperature=1, top_k=0, top_p=0.0, is_xlnet=False,
-                    device='cpu', unk_idx = 5):
+def sample_sequence(model, length, context, num_samples=1, temperature=1,
+        top_k=0, top_p=0.0, is_xlnet=False, device='cpu', unk_idx=4):
     context = torch.tensor(context, dtype=torch.long, device=device)
     context = context.unsqueeze(0).repeat(num_samples, 1)
     generated = context
