@@ -1,0 +1,11 @@
+pytorch-transformers
+pytorch-pretrained-bert
+torch
+numpy
+tqdm
+sklearn
+keras
+tb-nightly
+future
+thulac
+flask
