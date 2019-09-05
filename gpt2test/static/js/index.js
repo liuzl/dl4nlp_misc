@@ -44,7 +44,7 @@ function visual(doc) {
     for (var k in doc) {
         var v = doc[k];
 	if (k == "message") {
-	    v = "<pre>" + v + "</pre>";
+	    v = v.replace(/\n/g, "<br>");
 	}
         html += one(k, v);
     }
