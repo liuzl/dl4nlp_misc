@@ -13,7 +13,7 @@ import common
 from flask import Flask, request, Response
 app = Flask(__name__, static_url_path='')
 
-config_file = "tang.json"
+config_file = "songci.json"
 
 args = {}
 try:
@@ -40,6 +40,7 @@ def get():
     topp = 0
 
     context_tokens = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(prefix))
+    l = len(context_tokens)
     out = common.sample_sequence(
         model=model, length=length,
         context=context_tokens,
@@ -48,7 +49,6 @@ def get():
     )
     out = out.tolist()
     text = tokenizer.convert_ids_to_tokens(out[0])
-    l = len(prefix)
     text[:l] = list(prefix)
     for i, item in enumerate(text[:-1]):  # 确保英文前后有空格
         if common.is_word(item) and common.is_word(text[i+1]):
