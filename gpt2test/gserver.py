@@ -13,7 +13,7 @@ import common
 from flask import Flask, request, Response
 app = Flask(__name__, static_url_path='')
 
-config_file = "buddha.json"
+config_file = "tang.json"
 
 args = {}
 try:
@@ -34,7 +34,7 @@ model.eval()
 def get():
     prefix = request.args.get('text', '')
     
-    length = 300
+    length = 101
     temperature = 1
     topk = 8
     topp = 0
@@ -48,6 +48,8 @@ def get():
     )
     out = out.tolist()
     text = tokenizer.convert_ids_to_tokens(out[0])
+    l = len(prefix)
+    text[:l] = list(prefix)
     for i, item in enumerate(text[:-1]):  # 确保英文前后有空格
         if common.is_word(item) and common.is_word(text[i+1]):
             text[i] = item + ' '

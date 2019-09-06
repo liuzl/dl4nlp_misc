@@ -1,0 +1,6 @@
+{
+  "model_path":"models/jinyong",
+  "vocab_path":"cache/vocab.txt",
+  "port":4520,
+  "index":"jinyong.html"
+}
