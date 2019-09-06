@@ -1,0 +1,6 @@
+{
+  "model_path":"models/song",
+  "vocab_path":"cache/song_vocab.txt",
+  "port":4520,
+  "index":"songci.html"
+}
