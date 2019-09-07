@@ -1,5 +1,6 @@
 import requests
 import sys
+import os
 import json
 import torch
 import torch.nn.functional as F
@@ -13,7 +14,8 @@ import common
 from flask import Flask, request, Response
 app = Flask(__name__, static_url_path='')
 
-config_file = "songci.json"
+config_file = os.environ.get("config_file")
+if config_file is None: config_file = "songci.json"
 
 args = {}
 try:
@@ -34,7 +36,7 @@ model.eval()
 def get():
     prefix = request.args.get('text', '')
     
-    length = 101
+    length = args['length']#101
     temperature = 1
     topk = 8
     topp = 0
