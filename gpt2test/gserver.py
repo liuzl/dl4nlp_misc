@@ -16,6 +16,7 @@ app = Flask(__name__, static_url_path='')
 
 config_file = os.environ.get("config_file")
 if config_file is None: config_file = "songci.json"
+print("using config_file: %s" % config_file)
 
 args = {}
 try:
