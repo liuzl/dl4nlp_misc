@@ -2,5 +2,6 @@
   "model_path":"models/bud",
   "vocab_path":"cache/bud_vocab.txt",
   "port":4520,
+  "length":300,
   "index":"index.html"
 }
