@@ -13,7 +13,7 @@ import common
 from flask import Flask, request, Response
 app = Flask(__name__, static_url_path='')
 
-config_file = "songci.json"
+config_file = "jinyong.json"
 
 args = {}
 try:
@@ -34,7 +34,7 @@ model.eval()
 def get():
     prefix = request.args.get('text', '')
     
-    length = 101
+    length = 400
     temperature = 1
     topk = 8
     topp = 0
