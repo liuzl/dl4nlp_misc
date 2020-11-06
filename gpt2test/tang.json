@@ -2,5 +2,6 @@
   "model_path":"models/tang_0905",
   "vocab_path":"cache/vocab.txt",
   "port":4520,
+  "length": 101,
   "index":"poet.html"
 }

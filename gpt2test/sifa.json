@@ -1,0 +1,7 @@
+{
+  "model_path":"models/sifa",
+  "vocab_path":"cache/vocab.txt",
+  "port":6704,
+  "length":101,
+  "index":"sifa.html"
+}
